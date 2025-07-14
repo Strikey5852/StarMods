@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model" : "improvedglowsquids:block/glow_torch"
+    }
+  }
+}
