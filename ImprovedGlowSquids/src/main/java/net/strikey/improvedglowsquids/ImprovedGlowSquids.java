@@ -1,7 +1,6 @@
 package net.strikey.improvedglowsquids;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.strikey.improvedglowsquids.block.ModBlocks;
 
 public class ImprovedGlowSquids implements ModInitializer {
@@ -10,6 +9,5 @@ public class ImprovedGlowSquids implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModBlocks.registerModBlocks();
-
 	}
 }

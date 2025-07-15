@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "improvedglowsquids:block/glow_torch_wall"
+    },
+    "facing=north": {
+      "model": "improvedglowsquids:block/glow_torch_wall",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "improvedglowsquids:block/glow_torch_wall",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "improvedglowsquids:block/glow_torch_wall",
+      "y": 180
+    }
+  }
+}
