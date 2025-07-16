@@ -3,10 +3,7 @@ package net.strikey.improvedglowsquids.block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.TorchBlock;
-import net.minecraft.block.WallTorchBlock;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.VerticallyAttachableBlockItem;
@@ -20,30 +17,31 @@ import net.strikey.improvedglowsquids.ImprovedGlowSquids;
 
 public class ModBlocks {
 
-    public static final Block GLOW_TORCH = registerBlock(
-            new TorchBlock(ParticleTypes.END_ROD,
+    public static final Block GLOW_TORCH = Registry.register(
+            Registries.BLOCK,
+            Identifier.of(ImprovedGlowSquids.MOD_ID, "glow_torch"),
+            new UnderwaterTorchBlock(
                     AbstractBlock.Settings.create()
                             .noCollision()
                             .breakInstantly()
                             .luminance(state -> 14)
                             .sounds(BlockSoundGroup.WOOD)
                             .pistonBehavior(PistonBehavior.DESTROY)
-                            .nonOpaque()));
+                            .nonOpaque(),
+                    ParticleTypes.END_ROD));
 
     public static final Block GLOW_TORCH_WALL = Registry.register(
             Registries.BLOCK,
             Identifier.of(ImprovedGlowSquids.MOD_ID, "glow_torch_wall"),
-            new WallTorchBlock(
-                    ParticleTypes.END_ROD,
+            new UnderwaterWallTorchBlock(
                     AbstractBlock.Settings.create()
                             .noCollision()
                             .breakInstantly()
                             .luminance(state -> 14)
                             .sounds(BlockSoundGroup.WOOD)
                             .pistonBehavior(PistonBehavior.DESTROY)
-                            .nonOpaque()
-            )
-    );
+                            .nonOpaque(),
+                    ParticleTypes.END_ROD));
 
     public static final Item GLOW_TORCH_ITEM = Registry.register(
             Registries.ITEM,
@@ -51,13 +49,7 @@ public class ModBlocks {
             new VerticallyAttachableBlockItem(GLOW_TORCH, GLOW_TORCH_WALL, new Item.Settings(), Direction.DOWN)
     );
 
-    private static Block registerBlock(Block block) {
-        return Registry.register(Registries.BLOCK, Identifier.of(ImprovedGlowSquids.MOD_ID, "glow_torch"), block);
-    }
-
     public static void registerModBlocks() {
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> {
-            entries.add(GLOW_TORCH_ITEM);
-        });
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(entries -> entries.add(GLOW_TORCH_ITEM));
     }
 }

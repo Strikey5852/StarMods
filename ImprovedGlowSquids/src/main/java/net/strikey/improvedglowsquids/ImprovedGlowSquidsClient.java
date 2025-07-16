@@ -6,7 +6,6 @@ import net.minecraft.client.render.RenderLayer;
 import net.strikey.improvedglowsquids.block.ModBlocks;
 
 public class ImprovedGlowSquidsClient implements ClientModInitializer {
-    public static final String MOD_ID = "improvedglowsquids";
 
     @Override
     public void onInitializeClient() {

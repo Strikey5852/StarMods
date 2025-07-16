@@ -3,12 +3,16 @@
 	"package": "net.strikey.improvedglowsquids.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"BannerBlockEntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
 	},
 	"overwrites": {
 		"requireAnnotations": true
-	}
+	},
+	"client": [
+		"client.AccessorBannerBlockEntityRenderer",
+		"client.BannerBlockEntityRendererMixin"
+	]
 }
