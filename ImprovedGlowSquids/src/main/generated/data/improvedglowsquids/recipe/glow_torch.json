@@ -1,20 +1,20 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    "G",
-    "S"
-  ],
   "key": {
-    "G": {
+    "I": {
       "item": "minecraft:glow_ink_sac"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "I",
+    "S"
+  ],
   "result": {
-    "id": "improvedglowsquids:glow_torch",
-    "count": 4
+    "count": 4,
+    "id": "improvedglowsquids:glow_torch"
   }
 }
