@@ -8,7 +8,7 @@ import net.minecraft.client.render.block.entity.BannerBlockEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.component.type.BannerPatternsComponent;
 import net.minecraft.util.DyeColor;
-import net.strikey.improvedglowsquids.util.GlowingBanner;
+import net.strikey.improvedglowsquids.util.GlowingStateTracker;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -30,14 +30,14 @@ public abstract class BannerBlockEntityRendererMixin {
             int overlay,
             CallbackInfo ci
     ) {
-        if (!(bannerBlockEntity instanceof GlowingBanner glowingBanner)) return;
-        if (!glowingBanner.improvedGlowSquids$isGlowing()) return;
+        if (!(bannerBlockEntity instanceof GlowingStateTracker glowingStateTracker)) return;
+        if (!glowingStateTracker.improvedGlowSquids$isGlowing()) return;
 
         BannerPatternsComponent patterns = bannerBlockEntity.getPatterns();
         DyeColor baseColor = bannerBlockEntity.getColorForState();
 
         // Get banner model part
-        ModelPart canvas = ((AccessorBannerBlockEntityRenderer) (Object) this).getBanner();
+        ModelPart canvas = ((AccessorBannerBlockEntityRenderer) this).getBanner();
 
         // Render glowing full-bright banner using existing transform stack
         net.minecraft.client.render.block.entity.BannerBlockEntityRenderer.renderCanvas(

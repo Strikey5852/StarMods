@@ -1,18 +1,21 @@
 {
-	"required": true,
-	"package": "net.strikey.improvedglowsquids.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"BannerBlockEntityMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	},
-	"overwrites": {
-		"requireAnnotations": true
-	},
-	"client": [
-		"client.AccessorBannerBlockEntityRenderer",
-		"client.BannerBlockEntityRendererMixin"
-	]
+  "required": true,
+  "package": "net.strikey.improvedglowsquids.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BannerBlockEntityMixin",
+    "SheepEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  },
+  "client": [
+    "client.AccessorBannerBlockEntityRenderer",
+    "client.AccessorSheepWoolFeatureRenderer",
+    "client.BannerBlockEntityRendererMixin",
+    "client.SheepWoolFeatureRendererMixin"
+  ]
 }
