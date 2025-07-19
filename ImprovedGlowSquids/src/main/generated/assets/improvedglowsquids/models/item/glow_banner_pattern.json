@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "improvedglowsquids:item/glow_banner_pattern"
+  }
+}

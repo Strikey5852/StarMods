@@ -28,7 +28,7 @@ public abstract class SheepWoolFeatureRendererMixin {
                                                     SheepEntity sheep, float limbAngle, float limbDistance, float tickDelta,
                                                     float animationProgress, float headYaw, float headPitch, CallbackInfo ci) {
         if (!(sheep instanceof GlowingStateTracker glow)) return;
-        //if (!glow.improvedGlowSquids$isGlowing()) return;
+        if (!glow.improvedGlowSquids$isGlowing()) return;
         if (sheep.isSheared() || sheep.isInvisible()) return;
 
         int color;
